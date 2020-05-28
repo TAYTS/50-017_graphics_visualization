@@ -30,9 +30,9 @@ link_directories( ${GLUT_LIBRARY_DIR} )
 
 
 #source files
-file( GLOB SRCFILES 
-        ${CMAKE_CURRENT_SOURCE_DIR}/src/*.cpp
-        ${CMAKE_CURRENT_SOURCE_DIR}/src/*.h)
+file( GLOB SRCFILES
+    ${CMAKE_CURRENT_SOURCE_DIR}/src/*.cpp
+    ${CMAKE_CURRENT_SOURCE_DIR}/src/*.h)
 
 add_library(source_lib STATIC ${SRCFILES})
 
@@ -46,4 +46,3 @@ target_link_libraries(source_lib ${OPENGL_LIBRARIES} ${GLUT_LIBRARIES})
 
 add_executable(Assignment_0 src/main.cpp)
 target_link_libraries(Assignment_0 PUBLIC source_lib)
-

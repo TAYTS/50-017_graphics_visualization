@@ -1,0 +1,4 @@
+/Users/taytzushieh/Dropbox/SUTD/SCHOOL_STUFF/TERM8/Graphic_Visualisation/assignments/WEEK1/Assignment_0_code/build/CMakeFiles/rebuild_cache.dir
+/Users/taytzushieh/Dropbox/SUTD/SCHOOL_STUFF/TERM8/Graphic_Visualisation/assignments/WEEK1/Assignment_0_code/build/CMakeFiles/edit_cache.dir
+/Users/taytzushieh/Dropbox/SUTD/SCHOOL_STUFF/TERM8/Graphic_Visualisation/assignments/WEEK1/Assignment_0_code/build/CMakeFiles/Assignment_0.dir
+/Users/taytzushieh/Dropbox/SUTD/SCHOOL_STUFF/TERM8/Graphic_Visualisation/assignments/WEEK1/Assignment_0_code/build/CMakeFiles/source_lib.dir

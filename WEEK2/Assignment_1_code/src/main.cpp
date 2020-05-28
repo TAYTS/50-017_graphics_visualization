@@ -170,10 +170,12 @@ void SetDiffuseColor(int colorID) {
 }
 
 // TODO: insert your code in this function for Mesh Transformation (Rotation)
-void RotateModel(double angle, Vector3f axis) {}
+void RotateModel(double angle, Vector3f axis) {
+  glRotatef(angle, axis[0], axis[1], axis[2]);
+}
 
 // TODO: insert your code in this function for Mesh Transformation (Scaling)
-void ScaleModel(double scale) {}
+void ScaleModel(double scale) { glScalef(scale, scale, scale); }
 
 /***********************************************************************/
 /*****************************   Init/Reset  ***************************/
@@ -438,7 +440,7 @@ int main(int argc, char **argv) {
   if (argc > 1) {
     file_path = argv[1];
   }
-  int x = LoadInput("../data/sphere.obj");
+  int x = LoadInput("../data/garg.obj");
 
   if (x == 1) {
     cout << "Unable to load file. Please check again." << endl;

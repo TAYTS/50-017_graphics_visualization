@@ -139,7 +139,23 @@ int LoadInput(string filename) {
 void RenderModel() {
   // TODO: replace this code of rendering the teapot with your own code to
   // render the loaded OBJ model
-  glutSolidTeapot(1.0);
+  glBegin(GL_TRIANGLES);
+  for (auto face_vector : vecf) {
+    int a, d, g, c, f, i;
+    a = face_vector.at(0);
+    d = face_vector.at(3);
+    g = face_vector.at(6);
+    c = face_vector.at(2);
+    f = face_vector.at(5);
+    i = face_vector.at(8);
+    glNormal3d(vecn[c - 1][0], vecn[c - 1][1], vecn[c - 1][2]);
+    glVertex3d(vecv[a - 1][0], vecv[a - 1][1], vecv[a - 1][2]);
+    glNormal3d(vecn[f - 1][0], vecn[f - 1][1], vecn[f - 1][2]);
+    glVertex3d(vecv[d - 1][0], vecv[d - 1][1], vecv[d - 1][2]);
+    glNormal3d(vecn[i - 1][0], vecn[i - 1][1], vecn[i - 1][2]);
+    glVertex3d(vecv[g - 1][0], vecv[g - 1][1], vecv[g - 1][2]);
+  }
+  glEnd();
 }
 
 // TODO: insert your code in this function for Mesh Coloring

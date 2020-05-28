@@ -159,7 +159,15 @@ void RenderModel() {
 }
 
 // TODO: insert your code in this function for Mesh Coloring
-void SetDiffuseColor(int colorID) {}
+void SetDiffuseColor(int colorID) {
+  // Set the diffueColor using the colorTable and current colorID
+  for (int i = 0; i < sizeof(diffuseColor) / sizeof(diffuseColor[0]); i++) {
+    diffuseColor[i] = colorTable[colorID][i];
+  }
+
+  // Set the object diffuse color
+  glMaterialfv(GL_FRONT_AND_BACK, GL_DIFFUSE, diffuseColor);
+}
 
 // TODO: insert your code in this function for Mesh Transformation (Rotation)
 void RotateModel(double angle, Vector3f axis) {}
@@ -425,6 +433,11 @@ void drawScene(void) {
 /***********************************************************************/
 
 int main(int argc, char **argv) {
+  string file_path = "";
+
+  if (argc > 1) {
+    file_path = argv[1];
+  }
   int x = LoadInput("../data/sphere.obj");
 
   if (x == 1) {

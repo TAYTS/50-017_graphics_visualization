@@ -129,10 +129,10 @@ int LoadInput(string filename) {
 
     // Close the file
     fin.close();
+    cout << "Done loading obj file" << endl;
+    return 0;
   }
-
-  cout << "Done loading obj file" << endl;
-  return 0;
+  return 1;
 }
 
 // TODO: insert your code in this function for Mesh Display
@@ -439,8 +439,12 @@ int main(int argc, char **argv) {
 
   if (argc > 1) {
     file_path = argv[1];
+  } else {
+    cout << "No .obj file path provided" << endl;
+    return 1;
   }
-  int x = LoadInput("../data/garg.obj");
+
+  int x = LoadInput(file_path);
 
   if (x == 1) {
     cout << "Unable to load file. Please check again." << endl;

@@ -1,0 +1,4 @@
+/Users/mason/Desktop/Assignment_2/Assignment_1_NewFramework/cmake-build-release/CMakeFiles/rebuild_cache.dir
+/Users/mason/Desktop/Assignment_2/Assignment_1_NewFramework/cmake-build-release/CMakeFiles/edit_cache.dir
+/Users/mason/Desktop/Assignment_2/Assignment_1_NewFramework/cmake-build-release/CMakeFiles/Assignment_1.dir
+/Users/mason/Desktop/Assignment_2/Assignment_1_NewFramework/cmake-build-release/CMakeFiles/source_lib.dir

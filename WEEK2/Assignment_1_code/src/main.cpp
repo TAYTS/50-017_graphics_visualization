@@ -171,11 +171,31 @@ void SetDiffuseColor(int colorID) {
 
 // TODO: insert your code in this function for Mesh Transformation (Rotation)
 void RotateModel(double angle, Vector3f axis) {
-  glRotatef(angle, axis[0], axis[1], axis[2]);
+  double mat[16];
+
+  glGetDoublev(GL_MODELVIEW_MATRIX, mat);
+
+  glLoadIdentity();
+  glTranslated(mat[12], mat[13], mat[14]);
+  glRotated(angle, axis[0], axis[1], axis[2]);
+  glTranslated(-mat[12], -mat[13], -mat[14]);
+
+  glMultMatrixd(mat);
 }
 
 // TODO: insert your code in this function for Mesh Transformation (Scaling)
-void ScaleModel(double scale) { glScalef(scale, scale, scale); }
+void ScaleModel(double scale) {
+  double mat[16];
+
+  glGetDoublev(GL_MODELVIEW_MATRIX, mat);
+
+  glLoadIdentity();
+  glTranslated(mat[12], mat[13], mat[14]);
+  glScaled(scale, scale, scale);
+  glTranslated(-mat[12], -mat[13], -mat[14]);
+
+  glMultMatrixd(mat);
+}
 
 /***********************************************************************/
 /*****************************   Init/Reset  ***************************/

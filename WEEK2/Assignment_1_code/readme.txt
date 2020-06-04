@@ -19,5 +19,7 @@ program_binary_output <path_to_obj_file>
    b. set the 'glMaterialfv' using the updated diffuseColor
 
 4. Mesh Transformation
-   a. use 'glRotatef' to set the model rotation
-   b. use 'glScalef' to scale the model
+   a. get the model view matrix and translate(shift) the view before and after the rotate and scale transformation
+   b. multiply the new model view
+   c. use 'glRotatef' to set the model rotation
+   d. use 'glScalef' to scale the model

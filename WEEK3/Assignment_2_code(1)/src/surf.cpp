@@ -57,9 +57,9 @@ Surface makeSurfRev(const Curve &profile, unsigned steps) {
       // calculate the faces using all the vertices except the last vertex
       if (i < profileSize) {
         /*
-         *   * - *
-         *   | / |
-         *   * - *
+         *   * - *      1 - 3      3
+         *   | / |  =>  | /      / |
+         *   * - *      2      1 - 2
          */
         // current "step" profile curve vertex
         unsigned curVtxIdx = step * profileSize + i;

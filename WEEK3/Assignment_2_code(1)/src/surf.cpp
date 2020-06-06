@@ -55,7 +55,7 @@ Surface makeSurfRev(const Curve &profile, unsigned steps) {
       surface.VN.push_back((invTransp * newVN));
 
       // calculate the faces using all the vertices except the last vertex
-      if (i < profileSize) {
+      if (i + 1 < profileSize) {
         /*
          *   * - *      1 - 3      3
          *   | / |  =>  | /      / |
@@ -86,8 +86,6 @@ void drawSurface(const Surface &surface, bool shaded) {
   if (shaded) {
     glEnable(GL_LIGHTING);
     glPolygonMode(GL_FRONT_AND_BACK, GL_FILL);
-    glEnable(GL_CULL_FACE);
-    glCullFace(GL_BACK);
   } else {
     glDisable(GL_LIGHTING);
     glPolygonMode(GL_FRONT_AND_BACK, GL_LINE);

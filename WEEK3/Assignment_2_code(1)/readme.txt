@@ -15,14 +15,13 @@
         * - *      1 - 3      3
         | / |  =>  | /      / |
         * - *      2      1 - 2
+   3.4 ** Skip the last vertex of the profile **
 
 4. Draw smooth Surface
    4.1 Save the original OpenGL attributes
    4.2 If "shaded" is specify, set the following:
        4.2.1 glEnable(GL_LIGHTING) => Enable lighting
        4.2.2 glPolygonMode(GL_FRONT_AND_BACK, GL_FILL) => Fill the polygon(triangle)
-       4.2.3 glEnable(GL_CULL_FACE) => Discard all the back-facing polygons to improve the performance
-       4.2.4 glCullFace(GL_BACK) => Set to only discard the back-facing polygons
    4.3 Else
        4.3.1 glDisable(GL_LIGHTING) => Disable the lighting
        4.3.2 glPolygonMode(GL_FRONT_AND_BACK, GL_LINE) => Draw the polygons outline only

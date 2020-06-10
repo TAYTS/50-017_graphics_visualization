@@ -35,5 +35,5 @@
        5.2.1 glDisable(GL_LIGHTING) => Disable the lighting
        5.2.2 glColor4f(0, 1, 1, 0) => Change the line color to cyan
        5.2.3 glLineWidth(1) => Set the polygon lines width to 1
-   5.3 Draw the normal verors using the glBegin(GL_LINES) and using the Surface.VV, Surface.VN and the length specified
+   5.3 Draw the normal vectors using the glBegin(GL_LINES) and using the Surface.VV, Surface.VN and the length specified
    5.4 Use glEnd() to stop the drawing and glPopAttrib() to reset to original OpenGL attributes

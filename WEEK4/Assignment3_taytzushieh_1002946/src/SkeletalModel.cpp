@@ -88,7 +88,7 @@ void SkeletalModel::draw(Matrix4f cameraMatrix, Matrix4f rotMatrix) {
   m_matrixStack.push(rotMatrix);
   m_matrixStack.push(Trans_model_back);
 
-  setJointTransform(5, 0, 0, -100);
+  setJointTransform(6, 120, 0, 0);
   drawJoints();
   drawSkeleton();
 }

@@ -73,6 +73,9 @@ void SkeletalModel::draw(Matrix4f cameraMatrix, Matrix4f rotMatrix) {
   if (m_joints.size() == 0)
     return;
 
+  // set the rotation centre at the root joint
+  rotation_center_ = m_rootJoint->transform.getCol(3).xyz();
+
   // draw() gets called whenever a redraw is required
   // (after an update() occurs, when the camera moves, the window is resized,
   // etc)

@@ -83,6 +83,10 @@ bool showTexture = false;
 void calcPlanarMapping() {
   // calculate planar mapping
   // loop over all vertices and update objModel.vertices[i].t
+  for (int i = 0; i < objModel.vertices.size(); i++) {
+    objModel.vertices.at(i).t[0] = objModel.vertices.at(i).v[0] + 0.5;
+    objModel.vertices.at(i).t[1] = objModel.vertices.at(i).v[2] + 0.5;
+  }
 }
 
 // TODO: fill this function to realize cylindrical mapping
@@ -130,7 +134,7 @@ GLubyte* createTexImage() {
 }
 
 void initTexture() {
-  /* create texture object, texture environment and 
+  /* create texture object, texture environment and
        download the texture (use createTexImage) */
   glGenTextures(1, &texObj);
   glTexEnvi(GL_TEXTURE_ENV, GL_TEXTURE_ENV_MODE, GL_DECAL);

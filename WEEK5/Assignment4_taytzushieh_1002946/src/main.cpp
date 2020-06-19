@@ -136,15 +136,20 @@ GLubyte* createTexImage() {
       {255, 255, 255},  // white
       {0, 0, 0},        // black
   };
+  const int numOfColor = colorMap.size();
+  const int numRows = IMG_HEIGHT / numOfColor;
+  const int numCols = IMG_WIDTH / numOfColor;
+  const int blockHeight = IMG_HEIGHT / numOfColor;
+  const int blockWidth = IMG_WIDTH / numOfColor;
 
-  for (int i = 0; i < 8; i++) {
-    for (int j = 0; j < 8; j++) {
-      int colorIdx = (i + j) % 8;
-      for (int w = 0; w < 8; w++) {
-        for (int h = 0; h < 8; h++) {
-          imgTexture[i * 8 + w][j * 8 + h][0] = colorMap.at(colorIdx).at(0);
-          imgTexture[i * 8 + w][j * 8 + h][1] = colorMap.at(colorIdx).at(1);
-          imgTexture[i * 8 + w][j * 8 + h][2] = colorMap.at(colorIdx).at(2);
+  for (int r = 0; r < numRows; r++) {
+    for (int c = 0; c < numCols; c++) {
+      int colorIdx = (r + c) % numOfColor;
+      for (int h = 0; h < blockHeight; h++) {
+        for (int w = 0; w < blockWidth; w++) {
+          imgTexture[r * blockHeight + w][c * blockWidth + h][0] = colorMap.at(colorIdx).at(0);
+          imgTexture[r * blockHeight + w][c * blockWidth + h][1] = colorMap.at(colorIdx).at(1);
+          imgTexture[r * blockHeight + w][c * blockWidth + h][2] = colorMap.at(colorIdx).at(2);
         }
       }
     }

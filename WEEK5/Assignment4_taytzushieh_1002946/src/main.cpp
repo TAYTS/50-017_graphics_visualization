@@ -128,7 +128,7 @@ GLubyte* createTexImage() {
 
   const vector<vector<GLubyte>> colorMap = {
       {255, 0, 0},      // red
-      {255, 255, 0},    // yello
+      {255, 255, 0},    // yellow
       {0, 255, 0},      // green
       {0, 255, 255},    // turquoise
       {0, 0, 255},      // blue

@@ -84,8 +84,11 @@ void calcPlanarMapping() {
   // calculate planar mapping
   // loop over all vertices and update objModel.vertices[i].t
   for (int i = 0; i < objModel.vertices.size(); i++) {
-    objModel.vertices.at(i).t[0] = objModel.vertices.at(i).v[0] + 0.5;
-    objModel.vertices.at(i).t[1] = objModel.vertices.at(i).v[1] + 0.5;
+    float x = objModel.vertices.at(i).v[0];
+    float y = objModel.vertices.at(i).v[1];
+
+    objModel.vertices.at(i).t[S] = x + 0.5;
+    objModel.vertices.at(i).t[T] = y + 0.5;
   }
 }
 

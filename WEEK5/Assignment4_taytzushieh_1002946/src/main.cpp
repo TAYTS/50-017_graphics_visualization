@@ -108,6 +108,17 @@ void calcCylindricalMapping() {
 void calcSphericalMapping() {
   // calculate spherical mapping
   // loop over all vertices and update objModel.vertices[i].t
+  for (int i = 0; i < objModel.vertices.size(); i++) {
+    float x = objModel.vertices.at(i).v[0];
+    float y = objModel.vertices.at(i).v[1];
+    float z = objModel.vertices.at(i).v[2];
+    float p = sqrtf(powf(x, 2) + powf(y, 2) + powf(z, 2));
+    float theta = atan2f(z, x);
+    float phi = acosf(y / p);
+
+    objModel.vertices.at(i).t[S] = (theta + PI) / (2 * PI);
+    objModel.vertices.at(i).t[T] = phi / PI;
+  }
 }
 
 // TODO: fill this function to generate a 2D texture image

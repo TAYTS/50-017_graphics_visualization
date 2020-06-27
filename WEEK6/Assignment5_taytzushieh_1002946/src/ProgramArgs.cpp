@@ -6,8 +6,12 @@
 using namespace std;
 
 ProgramArgs ProgramArgs::parse(const int argc, const char* const argv[]) {
-  ProgramArgs args = ProgramArgs();
+  if (argc != 8) {
+    cerr << "Error: Insufficient arguments" << endl;
+    exit(EXIT_FAILURE);
+  }
 
+  ProgramArgs args = ProgramArgs();
   for (int argNum = 1; argNum < argc; ++argNum) {
     string currentArg = string(argv[argNum]);
 
@@ -22,13 +26,13 @@ ProgramArgs ProgramArgs::parse(const int argc, const char* const argv[]) {
       if (all_of(height.begin(), height.end(), ::isdigit)) {
         args.img_height = stoi(height);
       } else {
-        cerr << "Invalid height value (expect integer): " << height << endl;
+        cerr << "Error: Invalid height value (expect integer): " << height << endl;
         exit(EXIT_FAILURE);
       }
 
       // verify height value
       if (args.img_height <= 0) {
-        cerr << "Image height must > 0 " << endl;
+        cerr << "Error: Image height must > 0 " << endl;
         exit(EXIT_FAILURE);
       }
 
@@ -37,20 +41,20 @@ ProgramArgs ProgramArgs::parse(const int argc, const char* const argv[]) {
       if (all_of(width.begin(), width.end(), ::isdigit)) {
         args.img_width = stoi(width);
       } else {
-        cerr << "Invalid width value (expect integer): " << width << endl;
+        cerr << "Error: Invalid width value (expect integer): " << width << endl;
         exit(EXIT_FAILURE);
       }
 
       // verify width value
       if (args.img_width <= 0) {
-        cerr << "Image width must > 0 " << endl;
+        cerr << "Error: Image width must > 0 " << endl;
         exit(EXIT_FAILURE);
       }
     } else if (currentArg == "-output" && argNum + 1 < argc) {
       // set the output file
       args.output_filename = string(argv[++argNum]);
     } else {
-      cerr << "Invalid argument: " << currentArg << endl;
+      cerr << "Error: Invalid argument: " << currentArg << endl;
       exit(EXIT_FAILURE);
     }
   }

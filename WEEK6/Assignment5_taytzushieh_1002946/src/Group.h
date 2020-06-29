@@ -29,9 +29,6 @@ class Group : public Object3D {
     for (Object3D* obj : objects) {
       if (obj != nullptr) {
         check |= obj->intersect(r, h, tmin);
-        if (check) {
-          break;
-        }
       }
     }
 
